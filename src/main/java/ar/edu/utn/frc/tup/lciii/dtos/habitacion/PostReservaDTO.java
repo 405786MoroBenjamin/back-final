@@ -7,24 +7,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.Date;
-
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReservaDTO {
-
-    @JsonProperty("id_reserva")
-    private Long idReserva;
+public class PostReservaDTO {
+    @JsonProperty("id_hotel")
+    private Long idHotel;
 
     @JsonProperty("id_cliente")
     private String idCliente;
-
-    @JsonProperty("id_hotel")
-    private Long idHotel;
 
     @JsonProperty("tipo_habitacion")
     private String tipoHabitacion;
@@ -37,11 +31,6 @@ public class ReservaDTO {
     @JsonProperty("fecha_salida")
     private Date fechaSalida;
 
-    @JsonProperty("estado_reserva")
-    private String estadoReserva;
-
     @JsonProperty("medio_pago")
     private String medioPago;
-
-    private BigDecimal precio;
 }
