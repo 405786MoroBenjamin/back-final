@@ -33,7 +33,6 @@ class ReservaServiceTest {
     @Mock
     ReservaRepository reservaRepository;
 
-
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -312,7 +311,7 @@ class ReservaServiceTest {
             reservaService.getReservaById(1L);
         });
 
-        assertEquals(HttpStatus.BAD_REQUEST, exception.getStatusCode());
+        assertEquals(HttpStatus.NOT_FOUND, exception.getStatusCode());
         assertEquals("Reserva no encontrada", exception.getReason());
     }
 

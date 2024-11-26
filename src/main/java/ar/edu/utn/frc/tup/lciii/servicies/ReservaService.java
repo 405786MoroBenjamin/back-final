@@ -156,7 +156,7 @@ public class ReservaService {
     public ReservaDTO getReservaById(Long idReserva){
         Optional<ReservaEntity> reservaEntity = reservaRepository.findById(idReserva);
         if(reservaEntity.isEmpty()){
-            throw new ResponseStatusException(HttpStatusCode.valueOf(400),"Reserva no encontrada");
+            throw new ResponseStatusException(HttpStatusCode.valueOf(404),"Reserva no encontrada");
         }
         return mapReservaEntityToDto(reservaEntity.get());
     }
